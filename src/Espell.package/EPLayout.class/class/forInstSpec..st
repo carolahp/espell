@@ -5,4 +5,6 @@ forInstSpec: instSpec
 	(instSpec = 3) ifTrue: [ ^ EPVariableSizedWithInstVarLayout ].	
 	(instSpec = 2) ifTrue: [ ^ EPVariableSizedWithoutInstVarLayout ].
 	(instSpec = 16) ifTrue: [ ^ EPByteIndexableLayout ].
+	(instSpec = 24) ifTrue: [ ^ EPCompiledMethodLayout ].
+	
 	^ EPLayout
