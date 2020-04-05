@@ -1,9 +1,10 @@
 private
 basicCompileSourceCode: sourceCode forClass: aClass
 
-	| options |
+	| options contextClass |
 	options := #().
-	aClass className == #Context ifTrue: [ options := #(+ optionLongIvarAccessBytecodes) ].
+	contextClass := objectSpace backend interpreter codeProvider systemDefinition classWithRole: #Context.
+	aClass className == contextClass name ifTrue: [ options := #(+ optionLongIvarAccessBytecodes) ].
 	
 	^ (OpalCompiler new
 		options: options;
