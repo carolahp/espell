@@ -10,7 +10,7 @@ classNameWithOrigin
 	nameToShow := nameInstalled isNotEmpty ifTrue: [ nameInstalled ] ifFalse: [ nameFromEnv , ' [from environment]' ].
 	
 	^ showWarningEquals
-			ifTrue:  [ 'WARNING: installed class name doesn''t match ', Character cr,  nameInstalled, ' [installed] != ', nameFromEnv , ' [from environment]' ]
+			ifTrue:  [ 'WARNING: installed class name doesn''t match ', Character cr asString,  nameInstalled, ' [installed] != ', nameFromEnv , ' [from environment]' ]
 			ifFalse: [ 
 				showWarningEmpty 
 					ifTrue: [ 'WARNING: class with no name' ]
