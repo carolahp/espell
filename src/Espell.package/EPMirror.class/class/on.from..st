@@ -1,8 +1,11 @@
 instance creation
 on: aTargetObject from: aBackend
-	
-	^ self new
+	| instance |
+	instance := self new
 		target: aTargetObject;
-		backend: aBackend;
-		yourself.
-	
+		backend: aBackend.
+	"Return class mirror when appropriate"
+	"instance isClassMirror ifTrue: [
+		instance := instance asClassMirror ]."
+
+	^ instance
