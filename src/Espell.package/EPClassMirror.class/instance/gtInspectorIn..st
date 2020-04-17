@@ -8,7 +8,7 @@ gtInspectorIn: composite
 			mirrorSuperclass := self superclass.
 			mirrorMethodDict := self methodDictionary.
 			instanceDescriptions := ringClass parent instSpecDescriptions.
-			self halt .
+			
 			{				
 				{ 'name' . ringClass name . self className }.
 				{ 'superclass' . ringClass superclass name . mirrorSuperclass ifNil: [ nil ] ifNotNil: [ :ms | ms className ] }.
