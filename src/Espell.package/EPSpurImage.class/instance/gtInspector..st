@@ -1,10 +1,10 @@
 gt-extension
 gtInspector: composite
 	<gtInspectorPresentationOrder: 1>
-	^ composite table
+	self haltOnce.
+	^ composite tree
+		rootsExpanded;
 		title: 'Image';
-		display: [ 
-			self specialObjects collect: [ :assoc | assoc  ] ];
-		column: 'Index' evaluated: [:each |  each key ];
-		column: 'Value' evaluated: [ :each | each value ];
+		display: [ {self} ];
+		children: [ :each | each value allObjects ];
 		send: #value
