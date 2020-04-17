@@ -1,7 +1,7 @@
 gt-extension
 gtInspector: composite
 	<gtInspectorPresentationOrder: 1>
-	self haltOnce.
+	
 	^ composite tree
 		rootsExpanded;
 		title: 'Image';

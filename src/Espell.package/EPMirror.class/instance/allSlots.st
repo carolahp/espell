@@ -1,3 +1,3 @@
 accessing-slots
-allSlots
-	^ self layout allSlots
+allSlots.
+	^ self layout allSlotsFor: self 
