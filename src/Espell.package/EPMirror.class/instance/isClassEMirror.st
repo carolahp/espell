@@ -1,3 +1,3 @@
-gt-inspector-extension
+testing
 isClassEMirror
 	^ false
