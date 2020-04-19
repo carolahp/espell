@@ -1,3 +1,3 @@
 primitive support
-allObjects 
+allSlots
 	^ self mirror allSlots

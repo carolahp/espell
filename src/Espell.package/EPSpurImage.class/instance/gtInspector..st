@@ -6,5 +6,5 @@ gtInspector: composite
 		rootsExpanded;
 		title: 'Image';
 		display: [ {self} ];
-		children: [ :each | each value allObjects ];
+		children: [ :each | each value allSlots ];
 		send: #value

@@ -1,3 +1,3 @@
 accessing-contents
-allObjects
+allSlots
 	^ self specialObjects
