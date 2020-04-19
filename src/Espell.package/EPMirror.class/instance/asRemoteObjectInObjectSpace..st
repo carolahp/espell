@@ -1,0 +1,3 @@
+converting
+asRemoteObjectInObjectSpace: anEPObjectSpace 
+	^ self 
