@@ -19,7 +19,7 @@ gtInspectorIn: composite
 						ifNotNil: [ :md | 
 							md isNilObject 
 								ifTrue: [ md asString ] 
-								ifFalse: [ :mdic | mdic asLocalArray ]  ] }.
+								ifFalse: [ (EPRemoteDictionary on: md environment: md backend) asString ]  ] }.
 				{ 'format' . ringClass format . self format }.
 				{ 'instSpec' . ringClass instSpec . self instSpec }.
 				{ 'instSpecDescription' . 
