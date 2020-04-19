@@ -6,5 +6,5 @@ printOn: aStream
 	self isFalseObject ifTrue: [ aStream nextPutAll: 'aFalse'. ^self ].
 	
 	self isSmallInteger ifTrue: [ aStream nextPutAll: self asSmallInteger asString. ^self ].
-	
+	self isClassMirror ifTrue: [ ^ self asClassMirror printOn: aStream ].
 	self basicClass layout printOn: aStream with: self
