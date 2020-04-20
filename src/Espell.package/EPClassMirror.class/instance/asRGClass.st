@@ -1,3 +1,3 @@
 converting
 asRGClass
-	^ rgClass ifNil: [rgClass := self builder systemDefinitionAt: self classNameFromAnyOrigin]
+	^ self builder classLoader classForClassMirror: self

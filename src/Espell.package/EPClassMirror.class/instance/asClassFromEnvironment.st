@@ -1,3 +1,3 @@
 converting
 asClassFromEnvironment
-	^ rgClass 
+	^ self asRGClass
