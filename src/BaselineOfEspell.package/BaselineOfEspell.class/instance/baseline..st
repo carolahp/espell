@@ -17,7 +17,7 @@ baseline: spec
 				baseline: 'Spur'
 				with: [ 
 					spec
-						repository: 'github://demarey/pharo-vm:spur64/mc' "waiting PR to be integrated: 'github://pharo-project/pharo-vm:spur64/mc'" ].
+						repository: 'github://hogoww/pharo-vm:spur64/mc' "waiting PR to be integrated: 'github://pharo-project/pharo-vm:spur64/mc'" ].
 
 			spec package: 'EspellSimulator' with: [ spec requires: #( 'Espell' 'Spur' ) ].
 			spec package: 'Espell' with: [ spec requires: #( 'ASTInterpreter' ) ]. ]
