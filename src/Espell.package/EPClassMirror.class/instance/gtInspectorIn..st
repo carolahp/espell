@@ -11,7 +11,10 @@ gtInspectorIn: composite
 			
 			{				
 				{ 'name' . ringClass name . self className }.
-				{ 'superclass' . ringClass superclass name . mirrorSuperclass ifNil: [ nil ] ifNotNil: [ :ms | ms className ] }.
+				{ 'metaclass' . ringClass metaclass name . self basicClass ifNil: [ nil ] ifNotNil: [ :ms | ms asClassMirror asString ] }.
+				
+				{ 'superclass' . ringClass superclass name . mirrorSuperclass ifNil: [ nil ] ifNotNil: [ :ms | ms asClassMirror asString ] }.
+				
 				{ 'methodDictionary' . 
 					ringClass localMethods . 
 					mirrorMethodDict 
