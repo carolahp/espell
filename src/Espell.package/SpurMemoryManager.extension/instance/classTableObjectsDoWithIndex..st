@@ -9,4 +9,4 @@ classTableObjectsDoWithIndex: aBlock
 			[:j| | classOrNil |
 			classOrNil := self fetchPointer: j ofObject: page.
 			classOrNil ~= nilObj ifTrue:
-				[aBlock value: classOrNil value: i*j]]]
+				[aBlock value: classOrNil value: (i+1)*(j+1)]]]
