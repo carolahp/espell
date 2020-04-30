@@ -1,14 +1,11 @@
 gt-inspector-extension
 printOn: aStream
 	
-	self isNilObject ifTrue:   [ aStream nextPutAll:'aNil'. ^self  ].
-	self isTrueObject ifTrue:  [ aStream nextPutAll: 'aTrue'. ^self ].
-	self isFalseObject ifTrue: [ aStream nextPutAll: 'aFalse'. ^self ].
+	self isNilObject ifTrue:   [ ^ aStream nextPutAll:'aNil'  ].
+	self isTrueObject ifTrue:  [ ^ aStream nextPutAll: 'aTrue' ].
+	self isFalseObject ifTrue: [ ^ aStream nextPutAll: 'aFalse' ].
 	
-	self isSmallInteger ifTrue: [ aStream nextPutAll: self asSmallInteger asString. ^self ].
-	self isClassMirror 
-		ifTrue: [ self asClassMirror printOn: aStream ]
-		ifFalse: [ self basicClass layout printOn: aStream with: self ].
-	aStream nextPutAll: ' [';
-		 nextPutAll: self target address asString;
-		 nextPutAll: ']'
+	self isSmallInteger ifTrue: [ ^ aStream nextPutAll: self asSmallInteger asString ].
+	self isClassMirror ifTrue: [ ^ self asClassMirror printOn: aStream ].
+	self basicClass layout printOn: aStream with: self.
+	self printAddressOn: aStream
