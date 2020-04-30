@@ -5,6 +5,6 @@ gtInspector: composite
 	^ composite tree
 		rootsExpanded;
 		title: 'Image';
-		display: [ {self} ];
-		children: [ :each | each value allSlots ];
-		send: #value
+		display: [ self allSlots collect: [:arr | (arr at:2) ] ];
+		children: [ :each | each allSlots ]";
+		send: #self"
