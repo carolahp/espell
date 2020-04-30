@@ -5,6 +5,6 @@ gtInspector: composite
 	^ composite tree
 		rootsExpanded;
 		title: 'Image';
-		display: [ self allSlots collect: [:arr | (arr at:2) ] ];
-		children: [ :each | each allSlots ]";
+		display: [self allSlots ];
+		children: [ :each | [each allSlots] on: Error do: [ "this is for the case 'each' is an Association" each value allSlots ] ]";
 		send: #self"
