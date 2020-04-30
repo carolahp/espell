@@ -1,6 +1,7 @@
 accessing-specialObjects
 classTable
-	| mirror address |
-	address := self backend simulator objectMemory classTableFirstPage.
-	mirror := EPMirror onAddress: address backend: self backend.
-	^ EPRemoteArray on: mirror 
+	| classes |
+	classes := #() asOrderedCollection.
+	self backend simulator objectMemory classTableObjectsDo: [ :classOop | classes add: (EPClassMirror onAddress: classOop backend: self backend) ].
+	classes sort: [ :c1 :c2 | c1 classNameFromAnyOrigin < c2 classNameFromAnyOrigin ].
+	^ classes asArray asRemoteObjectInObjectSpace: self objectSpace
