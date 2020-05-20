@@ -1,4 +1,4 @@
-accessing variables
+accessing-slots
 allInstanceVariables
 	| basicClass |
 	

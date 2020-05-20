@@ -1,5 +1,7 @@
 interpreting
 evaluateCode: someCode withTemps: aCollectionOfTemps
-	| result |
-	result := self evaluateAST: (self compile: someCode withTemps: aCollectionOfTemps).
-	^ result
+	| temps |
+	temps := aCollectionOfTemps collect: [ :assoc | assoc key -> (assoc value asRemoteObjectInObjectSpace: self objectSpace)].
+	
+	^ self evaluateAST: (self compile: someCode withTemps: temps).
+	

@@ -1,3 +1,3 @@
-accessing
+accessing-slots
 allInstVars
 	^ self allInstanceVariables 

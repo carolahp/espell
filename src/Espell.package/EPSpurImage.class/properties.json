@@ -6,7 +6,11 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"nilObject"
+		"nilObject",
+		"trueObject",
+		"falseObject",
+		"specialObjectsArray",
+		"classTable"
 	],
 	"name" : "EPSpurImage",
 	"type" : "normal"
