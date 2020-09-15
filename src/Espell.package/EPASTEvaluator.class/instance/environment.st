@@ -1,4 +1,4 @@
 accessing
 environment
 	
-	^ environment ifNil: [ objectSpace environment ]
+	^ environment ifNil: [ objectSpace backend ]
