@@ -6,7 +6,7 @@ closureAST: aClosure forReceiver: aReceiver
 	
 	astToBind := aClosure parseTree copyInContext: Dictionary new.
 	compilationContext := self class compiler compilationContext.
-	compilationContext class: (PBClassDefinition on: aClosure methodClass environment: evaluator environment).
+	compilationContext class: aClosure methodClass.
 	compilationContext environment: self environment.
 	
 	^ astCache at: aClosure put: (astToBind
