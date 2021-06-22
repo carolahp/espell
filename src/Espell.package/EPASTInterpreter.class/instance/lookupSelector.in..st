@@ -4,7 +4,8 @@ lookupSelector: selector in: class
 	"This I think could be safe to remove"
 	class = ASTBlockClosure
 		ifTrue: [ ^super lookupSelector: selector in: class ].
-	
+	class = AIMethodContext
+		ifTrue: [ ^super lookupSelector: selector in: class ].
 	found := self
 		lookupFrom: class
 		until: [ :c | c includesSelector: selector ]

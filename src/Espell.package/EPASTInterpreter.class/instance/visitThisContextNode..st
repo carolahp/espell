@@ -1,3 +1,3 @@
 visiting
 visitThisContextNode: thisContextNode
-	^ super visitThisContextNode: thisContextNode
+	^ evaluator objectSpace backend mirrorOnExternalHandle: (super visitThisContextNode: thisContextNode)
