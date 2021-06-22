@@ -13,6 +13,8 @@ self flag: 'method changes for compatibility with Espell2'.
 			"DASTInterpreter"
 			anObject target object == DASTBlock ifTrue: [ ^ DASTBlock ].
 			anObject target object == DASTMethod ifTrue: [ ^ DASTMethod ].
+			anObject target object == DASTMethodContext ifTrue: [ ^ DASTMethodContext ].
+			
 			"anObject target object == DASTContext ifTrue: [ ^ DASTContext ]."
 		].
 	
